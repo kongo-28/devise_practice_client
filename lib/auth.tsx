@@ -4,7 +4,7 @@ export const withAuthServerSideProps = (url: string): GetServerSideProps => {
   return async (context) => {
     const { req, res } = context;
 
-    const response = await fetch(`${process.env.API_ORIGIN}/${url}`, {
+    const response = await fetch(`http://localhost:3000${url}`, {
       headers: {
         "Content-Type": "application/json",
         uid: req.cookies["uid"],
