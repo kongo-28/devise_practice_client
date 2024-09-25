@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 export const getServerSideProps: GetServerSideProps =
   withAuthServerSideProps("/api/v1/home");
 
-const Home = () => {
+const Home = (props) => {
   const router = useRouter();
   //////////////////ログアウト機能/////////////
   const handleLogout = async () => {
@@ -34,6 +34,7 @@ const Home = () => {
     <>
       <div className={styles.container}>
         <main className={styles.main}>
+          <h1>ようこそ{props.email}さん</h1>
           <h1 className={styles.title}>HOME</h1>
           <p className={styles.description}>ホーム画面です</p>{" "}
           <button onClick={handleLogout}>Logout</button>
