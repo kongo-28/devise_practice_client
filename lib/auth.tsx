@@ -15,7 +15,7 @@ export const withAuthServerSideProps = (url: string): GetServerSideProps => {
     if (!response.ok && response.status === 401) {
       return {
         redirect: {
-          destination: "/login",
+          destination: "/sign-in",
           permanent: false,
         },
       };
